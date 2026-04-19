@@ -109,6 +109,12 @@
     <profiles>
         <profile>
             <id>production</id>
+            <activation>
+                <property>
+                    <name>env</name>
+                    <value>production</value>
+                </property>
+            </activation>
             <properties>
                 <spring.profiles.active>production</spring.profiles.active>
             </properties>
