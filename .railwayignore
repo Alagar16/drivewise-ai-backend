@@ -1,0 +1,13 @@
+.git
+.gitignore
+.idea
+.vscode
+*.log
+target/
+node_modules/
+.DS_Store
+DRIVEWISE_README.md
+SAMPLE_REQUESTS.json
+HELP.md
+.mvn/wrapper/maven-wrapper.jar
+
