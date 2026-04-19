@@ -1,0 +1,124 @@
+{
+  "sampleRequests": [
+    {
+      "name": "High-distance family SUV buyer",
+      "request": {
+        "budget": 1500000,
+        "monthlyDistance": "high",
+        "drivingPattern": "Mixed",
+        "roadReality": "rough",
+        "travelGroup": "family",
+        "ownershipMindset": "safety",
+        "fuelType": "Diesel",
+        "vehicleType": "SUV"
+      },
+      "expectedBehavior": "Will prioritize SUVs with high safety ratings, good ground clearance, and fuel efficiency"
+    },
+    {
+      "name": "Budget-conscious city driver",
+      "request": {
+        "budget": 600000,
+        "monthlyDistance": "low",
+        "drivingPattern": "City",
+        "roadReality": "smooth",
+        "travelGroup": "solo",
+        "ownershipMindset": "cost",
+        "fuelType": "Petrol",
+        "vehicleType": "HatchBack"
+      },
+      "expectedBehavior": "Will prioritize affordable hatchbacks with good value proposition"
+    },
+    {
+      "name": "EV enthusiast premium buyer",
+      "request": {
+        "budget": 2000000,
+        "monthlyDistance": "medium",
+        "drivingPattern": "Highway",
+        "roadReality": "smooth",
+        "travelGroup": "family",
+        "ownershipMindset": "performance",
+        "fuelType": "EV",
+        "vehicleType": "SUV"
+      },
+      "expectedBehavior": "Will recommend premium EVs with good range and safety features"
+    },
+    {
+      "name": "Comfort-focused premium sedan buyer",
+      "request": {
+        "budget": 2500000,
+        "monthlyDistance": "medium",
+        "drivingPattern": "Highway",
+        "roadReality": "smooth",
+        "travelGroup": "family",
+        "ownershipMindset": "comfort",
+        "fuelType": "Diesel",
+        "vehicleType": "Sedan"
+      },
+      "expectedBehavior": "Will recommend premium sedans with high safety ratings and fuel efficiency"
+    },
+    {
+      "name": "Rough terrain adventurer",
+      "request": {
+        "budget": 1200000,
+        "monthlyDistance": "high",
+        "drivingPattern": "Mixed",
+        "roadReality": "rough",
+        "travelGroup": "solo",
+        "ownershipMindset": "performance",
+        "fuelType": "Diesel",
+        "vehicleType": "SUV"
+      },
+      "expectedBehavior": "Will prioritize SUVs with high ground clearance and good mileage"
+    }
+  ],
+  "curlExamples": {
+    "test1": "curl -X POST http://localhost:8080/api/cars/recommend -H 'Content-Type: application/json' -d '{\"budget\": 1500000, \"monthlyDistance\": \"high\", \"drivingPattern\": \"Mixed\", \"roadReality\": \"rough\", \"travelGroup\": \"family\", \"ownershipMindset\": \"safety\", \"fuelType\": \"Diesel\", \"vehicleType\": \"SUV\"}'",
+    "test2": "curl -X POST http://localhost:8080/api/cars/recommend -H 'Content-Type: application/json' -d '{\"budget\": 600000, \"monthlyDistance\": \"low\", \"drivingPattern\": \"City\", \"roadReality\": \"smooth\", \"travelGroup\": \"solo\", \"ownershipMindset\": \"cost\", \"fuelType\": \"Petrol\", \"vehicleType\": \"HatchBack\"}'",
+    "health": "curl http://localhost:8080/api/cars/health"
+  },
+  "postmanCollection": {
+    "info": {
+      "name": "Drivewise AI API",
+      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+      {
+        "name": "Get Recommendations",
+        "request": {
+          "method": "POST",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": {
+            "mode": "raw",
+            "raw": "{\"budget\": 1500000, \"monthlyDistance\": \"high\", \"drivingPattern\": \"Mixed\", \"roadReality\": \"rough\", \"travelGroup\": \"family\", \"ownershipMindset\": \"safety\", \"fuelType\": \"Diesel\", \"vehicleType\": \"SUV\"}"
+          },
+          "url": {
+            "raw": "http://localhost:8080/api/cars/recommend",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "8080",
+            "path": ["api", "cars", "recommend"]
+          }
+        }
+      },
+      {
+        "name": "Health Check",
+        "request": {
+          "method": "GET",
+          "url": {
+            "raw": "http://localhost:8080/api/cars/health",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "8080",
+            "path": ["api", "cars", "health"]
+          }
+        }
+      }
+    ]
+  }
+}
+
