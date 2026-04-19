@@ -31,5 +31,13 @@ public class CarController {
     public String health() {
         return "Drivewise AI backend is running!";
     }
+
+    /**
+     * Root endpoint for debugging
+     */
+    @GetMapping("")
+    public String root() {
+        return "Drivewise AI API - Use /api/cars/health or /api/cars/recommend";
+    }
 }
 

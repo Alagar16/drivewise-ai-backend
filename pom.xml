@@ -28,10 +28,7 @@
     </scm>
     <properties>
         <java.version>17</java.version>
-<<<<<<< HEAD
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-=======
->>>>>>> 470203f693ea9f8a82b3c5cd20605db01c7c6697
     </properties>
     <dependencies>
         <dependency>
@@ -108,7 +105,6 @@
         </plugins>
     </build>
 
-<<<<<<< HEAD
     <!-- Profiles for different environments -->
     <profiles>
         <profile>
@@ -128,6 +124,4 @@
         </profile>
     </profiles>
 
-=======
->>>>>>> 470203f693ea9f8a82b3c5cd20605db01c7c6697
 </project>
